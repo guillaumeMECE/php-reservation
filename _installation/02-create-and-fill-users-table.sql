@@ -3,7 +3,9 @@ CREATE TABLE IF NOT EXISTS `login`.`users` (
   `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',
   `user_password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s password in salted and hashed format',
   `user_email` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s email, unique',
+  `user_img` varchar(2000) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s img path, unique',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_name` (`user_name`),
-  UNIQUE KEY `user_email` (`user_email`)
+  UNIQUE KEY `user_email` (`user_email`),
+  UNIQUE KEY `user_img` (`user_img`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data';
