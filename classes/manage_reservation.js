@@ -1,3 +1,12 @@
+$(document).ready(function() {
+
+});
+
+function rowClick(rowId) {
+   alert("row : "+rowId);
+}
+
+
 /*class ManageDesk {
    constructor() {
 

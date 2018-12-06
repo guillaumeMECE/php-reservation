@@ -27,6 +27,8 @@ echo '<img src="img.png?t='.time().'">';
 
 <?php
 
+// FIXME: Change img
+
 function display()
 {
 	//ini_set('memory_limit', '100M');
