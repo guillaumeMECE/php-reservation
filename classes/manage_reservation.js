@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 function rowClick(rowId) {
    alert("row : "+rowId);
+   //$.get("somepage.php"); //to execute php page for searching in sql
 }
 
 
