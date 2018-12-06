@@ -5,6 +5,7 @@
    <meta charset="utf-8">
    <title>Reservation</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <link href="../style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,9 +81,12 @@
                         <th scope=\"row\">$schedule[$j]</th>
                         <td>$deskAvailability</td>
                         <td>$userName</td>
-                        <td>$userPicture</td>
+                        <td><img src=\"../res/user-img.jpg\" alt=\"user pic\" class=\"img-thumbnail\"></td>
                      </tr>";
             }
+            //$userPicture
+
+
             /*
             if (mysqli_num_rows($result) > 0) {
              // output data of each row
