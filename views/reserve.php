@@ -46,6 +46,8 @@
    </div>
 
 
+<!--JS/JQUERY INCLUDE-->
+<script type="text/javascript" src="classes\manage_reservation.js"></script>
 </body>
 
 </html>

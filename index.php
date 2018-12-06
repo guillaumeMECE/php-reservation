@@ -66,6 +66,8 @@ if ($login->isUserLoggedIn() == true) {
 ?>
 
 </div>
+
+<!--JS/JQUERY/BOOTSTRAP INCLUDE-->
 <script type="text/javascript" src="classes\changeImgPath.js"></script>
 <script type="text/javascript" src="classes\manage_reservation.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
