@@ -62,7 +62,7 @@
                        echo "Error updating record: " . mysqli_error($conn);
                    }
                    //header("Refresh:0");
-                   header('Location:reserve.php');
+
                    //return true;
                //}
                }
@@ -70,6 +70,7 @@
                // TODO: add error message like it's already reserved
                alert("You cann't");
            }
+           header('Location:reserve.php');
            //return $data+1;
            mysqli_close($conn);
        }
@@ -231,12 +232,6 @@
          </tbody>
       </table-->
 
-      <?php php
-
-
-
-
-      ?>
 
 
 
