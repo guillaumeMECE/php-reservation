@@ -32,12 +32,15 @@
            foreach ($registration->errors as $error) {
                echo $error;
            }
+           echo "<div class=\"alert alert-danger w-75 mx-auto \" role=\"alert\">
+           $error
+             </div>" ;
        }
        if ($registration->messages) {
            foreach ($registration->messages as $message) {
                //echo $message;
                echo "<div class=\"alert alert-success w-75 mx-auto \" role=\"alert\">
-               Your Account as been created successfully !
+               $message
                   </div>" ;
                $delay = 2;
                $url='index.php';

@@ -27,6 +27,8 @@ echo '<img src="img.png?t='.time().'">';
 
 <?php
 
+// FIXME: Change img
+
 function display()
 {
 	//ini_set('memory_limit', '100M');
@@ -53,6 +55,8 @@ function display()
 	echo "Error updating path: " . $conn->error;
 	}
 
+// TODO: check if user-img.jpg don't disapear!!!
+
 	*/
 	$UploadedFileName = $_FILES['path']['name'];
 	if ($UploadedFileName != '') {
@@ -61,8 +65,13 @@ function display()
 		// $TargetPath=time().$UploadedFileName;$_SESSION['user_name']
 		// $TargetPath=$_SESSION['user_name'].$UploadedFileName;
 		// $TargetPath=time().$_SESSION['user_name'];
-
-		$TargetPath = $_SESSION['user_name'].".jpg";
+      $filename=$_SESSION['user_img'];
+      if (file_exists($filename)) {
+         if ($filename != "res/user-img.jpg") {
+              unlink($filename);
+         }
+}
+		$TargetPath = time().$_SESSION['user_name'].".jpg";
 		echo $upload_directory.$TargetPath;
 		$temp_file = $_FILES['path']['tmp_name'];
 	//	if (is_uploaded_file($temp_file)) {

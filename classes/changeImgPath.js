@@ -14,7 +14,7 @@ $(document).ready(function() {
       });
    });*/
    $("#changePath").click(function() {
-      if (document.getElementById('form_user_img_path')) { //if exist hide it if not create it
+      if (document.getElementById('form_user_img_path')) { //if exist delete it, if not create it
          $("#form_user_img_path").remove();
       } else {
          /*<div class="custom-file">
