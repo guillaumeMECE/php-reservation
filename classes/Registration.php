@@ -79,7 +79,7 @@ class Registration
                 // escaping, additionally removing everything that could be (html/javascript-) code
                 $user_name = $this->db_connection->real_escape_string(strip_tags($_POST['user_name'], ENT_QUOTES));
                 $user_email = $this->db_connection->real_escape_string(strip_tags($_POST['user_email'], ENT_QUOTES));
-               $user_img = "res/user-img.jpg";
+                $user_img = "res/user-img.jpg";
                 $user_password = $_POST['user_password_new'];
 
                 // crypt the user's password with PHP 5.5's password_hash() function, results in a 60 character

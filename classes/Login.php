@@ -88,7 +88,6 @@ class Login
                         $_SESSION['user_email'] = $result_row->user_email;
                         $_SESSION['user_img'] = $result_row->user_img;
                         $_SESSION['user_login_status'] = 1;
-
                     } else {
                         $this->errors[] = "Wrong password. Try again.";
                     }
@@ -111,7 +110,6 @@ class Login
         session_destroy();
         // return a little feeedback message
         $this->messages[] = "You have been logged out.";
-
     }
 
     /**
@@ -120,7 +118,7 @@ class Login
      */
     public function isUserLoggedIn()
     {
-        if (isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] == 1) {
+        if (isset($_SESSION['user_login_status']) and $_SESSION['user_login_status'] == 1) {
             return true;
         }
         // default return

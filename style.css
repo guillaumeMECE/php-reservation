@@ -1,3 +1,5 @@
+/*overide the size of img-thumbnail
+that is use for the reservation*/
 .img-thumbnail {
    width: 100px;
    height: auto;

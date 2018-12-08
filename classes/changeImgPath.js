@@ -86,8 +86,8 @@ $(document).ready(function() {
          }).appendTo("#user_img_path_div_custom");
          $("<label></label>", { // input to enter new path
             "class": "custom-file-label",
-            "for":"inputGroupFile04",
-            "text":"Choose file"
+            "for": "inputGroupFile04",
+            "text": "Choose file"
          }).appendTo("#user_img_path_div_custom");
          $("<div></div>", { // input to enter new path
             "class": "input-group-append",
