@@ -82,7 +82,9 @@
 
        // check if there is a request for a reservation
        if (isset($_GET['IdOfRow'])) {
-           check_row($_GET['IdOfRow']);
+          if (isset($_SESSION['user_name'])) {
+             check_row($_GET['IdOfRow']);
+          }
        }
 
       // Array to store all the schedule (we can acces it with id)
@@ -97,7 +99,7 @@
              $deskNbr = $i+1; // the desk id start at 1 in the DATABASE not 0
 
              // creat a table in HTML with Bootstrap CSS
-             echo "<div class=\"bg-light p-3 m-3\">
+             echo "<div class=\"bg-light p-3 m-3 shadow-sm\">
                      <h1>Desk $deskNbr </h1>
                         <table class=\"table table-hover\">
                            <thead>
@@ -158,7 +160,7 @@
                      echo "<td> $userPicture </td>
                </tr>";
                  } else {
-                     echo "<td><img src=\"../$userPicture\" alt=\"user pic\" class=\"img-thumbnail\"></td>
+                     echo "<td><img src=\"../$userPicture\" alt=\"user pic\" class=\"img-thumbnail shadow-sm\"></td>
                </tr>
                ";
                  }
@@ -176,6 +178,15 @@
 
       ?>
 
+
+      <script type="text/javascript">
+         var element = document.getElementById("nav0");
+         element.classList.remove("active");
+          element = document.getElementById("nav1");
+         element.classList.add("active");
+         element = document.getElementById("nav2");
+        element.classList.remove("active");
+      </script>
       <!--JS/JQUERY INCLUDE-->
       <!--script type="text/javascript" src="..\classes\manage_reservation.js"></script-->
       <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script-->

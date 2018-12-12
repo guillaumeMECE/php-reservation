@@ -10,6 +10,9 @@
       <?php
       // include the configs / constants for the database connection
       require_once("../config/db.php");
+
+      session_start(); // enable the acces to SESSION variables
+
       /*NAVBAR*/
       include("navbar.php");
 
@@ -29,7 +32,9 @@
 
           // Check if UPDATE work
           if (mysqli_query($conn, $sql_user_info)) {
-              echo "Record updated successfully";
+             echo "<div class=\"alert alert-success w-75 mx-auto m-3 text-center\" role=\"alert\">
+            The database is reset
+            </div>";
           } else {
               echo "Error updating record: " . mysqli_error($conn);
           }
@@ -40,7 +45,14 @@
 
       // Check if there is the parameter to reset
        if (isset($_GET['Reset'])) {
-           reset_all_data();
+           if (isset($_SESSION['user_name'])){
+              reset_all_data();
+          }else{
+             echo "<div class=\"alert alert-danger w-75 mx-auto m-3 text-center\" role=\"alert\">
+            You have to be logged in to reset all
+            </div>";
+          }
+
        }
        /*else {
            echo "FAILED";
@@ -54,6 +66,16 @@
    <div class="text-center">
      <a href='settings.php?Reset=$deskId=true'> <button type="button" class="btn btn-danger mx-auto" id="anyDesk">Reset all reservation</button> </a>
    </div>
+
+
+   <script type="text/javascript">
+      var element = document.getElementById("nav0");
+      element.classList.remove("active");
+       element = document.getElementById("nav1");
+      element.classList.remove("active");
+      element = document.getElementById("nav2");
+     element.classList.add("active");
+   </script>
 
    </body>
 </html>
