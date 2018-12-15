@@ -134,7 +134,16 @@
 
        ?>
 
-
+       <script type="text/javascript">
+          var element = document.getElementById("nav0");
+          element.classList.remove("active");
+           element = document.getElementById("nav1");
+          element.classList.remove("active");
+          element = document.getElementById("nav2");
+        element.classList.remove("active");
+        element = document.getElementById("nav3");
+       element.classList.add("active");
+       </script>
 
 
    <!--JS/JQUERY INCLUDE-->

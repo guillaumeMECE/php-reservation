@@ -250,6 +250,8 @@
          element.classList.add("active");
          element = document.getElementById("nav2");
         element.classList.remove("active");
+        element = document.getElementById("nav3");
+      element.classList.remove("active");
       </script>
       <!--JS/JQUERY INCLUDE-->
       <!--script type="text/javascript" src="..\classes\manage_reservation.js"></script-->

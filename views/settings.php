@@ -75,6 +75,8 @@
       element.classList.remove("active");
       element = document.getElementById("nav2");
      element.classList.add("active");
+     element = document.getElementById("nav3");
+    element.classList.remove("active");
    </script>
 
    </body>

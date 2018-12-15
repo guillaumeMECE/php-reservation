@@ -72,6 +72,8 @@ if ($login->isUserLoggedIn() == true) {
    element.classList.remove("active");
    element = document.getElementById("nav2");
  element.classList.remove("active");
+ element = document.getElementById("nav3");
+element.classList.remove("active");
 </script>
 
 <!--JS/JQUERY/BOOTSTRAP INCLUDE-->
