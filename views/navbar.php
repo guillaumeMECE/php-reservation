@@ -46,6 +46,7 @@
     <div class="navbar-nav ">
       <a id="nav0" class="nav-item nav-link"  href="/php-reservation4/index.php">Home <!--span class="sr-only">(current)</span--></a>
       <a id="nav1" class="nav-item nav-link" href="/php-reservation4/views/reserve.php">Reserve a desk</a>
+      <a id="nav3" class="nav-item nav-link"  href="/php-reservation4/views/myReservation.php">My Bookings</a>
       <a id="nav2" class="nav-item nav-link"  href="/php-reservation4/views/settings.php">Settings</a>
     </div>
   </div>
