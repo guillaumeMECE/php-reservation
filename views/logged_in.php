@@ -4,7 +4,7 @@ Hey, <?php echo $_SESSION['user_name']; ?>. You are logged in.
 <a href="index.php?logout">Logout</a>
 
 <!--User Card-->
-<div class="card m-5 mx-auto" style="width: 18rem;">
+<div class="card m-5 mx-auto shadow" style="width: 18rem;">
    <img class="card-img-top" src="<?php echo $_SESSION['user_img'];?>" alt="User img path must be wrong">
    <!--img class="card-img-top" src="res/user-img.jpg" alt="Card image user"
 echo '<img src="img.png?t='.time().'">';

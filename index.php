@@ -8,9 +8,6 @@
    </head>
    <body>
 
-
-
-
       <div class="row">
         <div class="col-12">
 
@@ -47,13 +44,13 @@ if ($login->isUserLoggedIn() == true) {
     </div>
     <div class="col-6 text-center">
 
-      <a href="views/reserve.php"> <button type="button" class="btn btn-primary mx-auto" id="anyDesk">Any Desk</button> </a>
+      <a href="views/reserve.php?anyDesk=True"> <button type="button" class="btn btn-primary mx-auto shadow" id="anyDesk">Any Desk</button> </a>
 
 
     </div>
     <div class="col-6 text-center">
 
-      <a href="views/reserve.php">  <button type="button" class="btn btn-primary mx-auto"  id="specificDesk">Specific Desk</button> </a>
+      <a href="views/reserve.php">  <button type="button" class="btn btn-primary mx-auto shadow"  id="specificDesk">Specific Desk</button> </a>
 
 
     </div>
@@ -66,6 +63,16 @@ if ($login->isUserLoggedIn() == true) {
 ?>
 
 </div>
+
+
+<script type="text/javascript">
+   var element = document.getElementById("nav0");
+   element.classList.add("active");
+    element = document.getElementById("nav1");
+   element.classList.remove("active");
+   element = document.getElementById("nav2");
+ element.classList.remove("active");
+</script>
 
 <!--JS/JQUERY/BOOTSTRAP INCLUDE-->
 <script type="text/javascript" src="classes\changeImgPath.js"></script>
