@@ -82,13 +82,77 @@
 
        // check if there is a request for a reservation
        if (isset($_GET['IdOfRow'])) {
-          if (isset($_SESSION['user_name'])) {
-             check_row($_GET['IdOfRow']);
+           if (isset($_SESSION['user_name'])) {
+               check_row($_GET['IdOfRow']);
+           }
+       }
+
+       function reserve_any_desk()
+       {
+           $actualTime=date("h"); // get the actual hour
+           echo $actualTime;
+           $schedule_periode = array(9, 11, 1,3,5);
+           $ref_id=0;
+           $ref=abs($actualTime-$schedule_periode[0]);
+           for ($i=0; $i < 5; $i++) {
+               $ref_new=abs($actualTime-$schedule_periode[$i]);
+               if ($ref_new<$ref) {
+                   $ref_id = $i ;
+                   $ref = $ref_new;
+               }
+           }
+
+           // Next block to avoid a reservation if the hour already start
+           if ($actualTime > $schedule_periode[$ref_id]) {
+               if ($ref_id == 4) {
+                   $ref_id=0;
+               } else {
+                   $ref_id++;
+               }
+           }
+           echo " h + proche : ". $ref_id . " soit : ". $schedule_periode[$ref_id];
+
+           // Create connection
+           $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+           // Check connection
+           if (!$conn) {
+               die("Connection failed: " . mysqli_connect_error());
+           }
+           $idSearch=$ref_id;
+           $isFind=false;
+           $i=-1;
+
+          // for ($i=0; $i < 10; $i++) {
+          while ($isFind != true && $i<10) {
+             $i++;
+             $idSearch = ($ref_id+1)+5*$i;
+               $sql = "SELECT * FROM desk WHERE desk_status='AVAIL' AND desk_id='" . $idSearch . "';";
+               $result = mysqli_query($conn, $sql);
+
+               if (mysqli_num_rows($result) > 0) {
+                   // output data of each row
+                   while ($row = mysqli_fetch_assoc($result)) {
+                       echo "id: " . $row["desk_id"]. " - Status: " . $row["desk_status"]. " <br>";
+                   }
+                   $isFind=true;
+                   check_row($idSearch);
+               } else {
+                   echo "0 results  <br>";
+               }
           }
+           mysqli_close($conn);
+
+
+
+       }
+
+       if (isset($_GET['anyDesk'])) {
+           reserve_any_desk();
        }
 
       // Array to store all the schedule (we can acces it with id)
       $schedule = array("8:00am-9:55am", "10:00am-11:55am", "12:00am-1:55pm","2:00pm-3:55pm","4:00pm-5:55pm");
+      //                     1+5*i             2+5*i              3+5*i           4+5*i            5+5*i
 
       // Check connection
       if (!$conn) {
@@ -155,7 +219,7 @@
                         <td>$userName</td>
                         ";
 
-                  // if no one reserve the desk don't print an img but just a blank space
+                 // if no one reserve the desk don't print an img but just a blank space
                  if ($userPicture=="") {
                      echo "<td> $userPicture </td>
                </tr>";

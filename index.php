@@ -8,9 +8,6 @@
    </head>
    <body>
 
-
-
-
       <div class="row">
         <div class="col-12">
 
@@ -47,7 +44,7 @@ if ($login->isUserLoggedIn() == true) {
     </div>
     <div class="col-6 text-center">
 
-      <a href="views/reserve.php"> <button type="button" class="btn btn-primary mx-auto shadow" id="anyDesk">Any Desk</button> </a>
+      <a href="views/reserve.php?anyDesk=True"> <button type="button" class="btn btn-primary mx-auto shadow" id="anyDesk">Any Desk</button> </a>
 
 
     </div>
