@@ -10,36 +10,6 @@
      element.classList.remove("active");
       element = document.getElementById("nav1");
      element.classList.add("active");
-
- /* switch (focusId) {
-     case 0:
-     element = document.getElementById("nav0");
-     element.classList.add("active");
-     var element = document.getElementById("nav1");
-     element.classList.remove("active");
-     element = document.getElementById("nav2");
-     element.classList.remove("active");
-        break;
-     case 1:
-     element = document.getElementById("nav0");
-     element.classList.remove("active");
-     var element = document.getElementById("nav1");
-     element.classList.add("active");
-     element = document.getElementById("nav2");
-     element.classList.remove("active");
-        break;
-     case 2:
-     element = document.getElementById("nav0");
-     element.classList.remove("active");
-     var element = document.getElementById("nav1");
-     element.classList.remove("active");
-     element = document.getElementById("nav2");
-     element.classList.add("active");
-        break;
-     default:
-     element = document.getElementById("nav0");
-     element.classList.add("active");
-  }*/
   }
   </script>
   <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
